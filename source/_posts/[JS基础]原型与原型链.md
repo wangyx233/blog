@@ -69,7 +69,7 @@ console.log(sDemo.__proto__ === SubDemo.prototype) // true
 
 * 每个class都有显示原型prototype
 * 每个实例都有隐式原型__proto__
-* 实例的__proto指向对应class的prototype
+* 实例的__proto__指向对应class的prototype
 
 ### 基于原型的执行规则
 
