@@ -99,8 +99,27 @@ class tryEventEmitter {
   }
   off(type, handler) {
     if (this.eventMap[type]) {
-      this.eventMap[type].splice(this.eventMap[type].indexOf(handler) , 1);
+      this.eventMap[type].splice(this.eventMap[type].indexOf(handler) >>> 0 , 1);
     }
   }
 }
 ```
+
+### Context API 工作流
+
+> React 16.3开始改进。React.createContext,Provider,Consumer
+
+- Provider,数据的提供者
+- Consumer,数据的消费者
+
+```
+  const AppContext = React.createContext(defaultValue)
+  const { Provider, Consumer } = AppContext
+  <Provider>
+  </Provider>
+  <Consumer>
+  </Consumer>
+```
+新版改进后的Context，在shouldComponentUpdate为false时，仍可以保持后代组件数据的一致性
+在 Redux 的整个工作过程中，数据流是严格单向的
+Redux 通过提供一个统一的状态容器，使得数据能够自由而有序地在任意组件之间穿梭
