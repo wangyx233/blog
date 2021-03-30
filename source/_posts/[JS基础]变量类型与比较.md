@@ -26,6 +26,15 @@ toc: true
 递归实现，function内容
 ```
 https://codepen.io/yx233/pen/oNzKvbg
+
+function deepClone(obj) {
+  if(typeof obj !== 'object' || obj == null) return obj;
+  let res = obj instanceof Array ? [] : {};
+  for(let key in obj) {
+    if(obj.hasOwnProperty(key)) res[key] = deepClone(obj[key]);
+  }
+  return res;
+}
 ```
 
 ## 类型转换

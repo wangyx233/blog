@@ -88,3 +88,20 @@ Object.prototype.__proto__ === null
 > 所以 variable instanceof 构造函数类型，即根据原型链看variable的隐式原型__proto__是不是在其判断的显示原型上
 
 {% img /gallery/prototype_demo.png %}
+
+## 实践-简易实现jQuery考虑插件/扩展项
+class jQuery {
+    constructor(selector) {}
+}
+
+- 插件，写在其显示原型上
+jQuery.prototype.plugin = () => {}
+
+- 扩展项，可在继承其基础上，再重写新的方法
+
+class myjQuery extends jQuery {
+    constructor(selector) {
+        super(selector)
+    }
+    
+}
