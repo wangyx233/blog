@@ -53,5 +53,11 @@ toc: true
 
 为什么要改呢？
 React 16 改造生命周期的主要动机是为了配合 Fiber 架构带来的异步渲染机制，针对生命周期中长期被滥用的部分推行了具有强制性的最佳实践。这一系列的工作做下来，首先是确保了 Fiber 机制下数据和视图的安全性，同时也确保了生命周期方法的行为更加纯粹、可控、可预测。Fiber 会使原本同步的渲染过程变成异步的。
+新的生命周期分为Render 和 Commit阶段，Commit阶段涉及实际的DOM修改，不会被打断，而Render阶段可以被打断
+如果在废除的 willMount ，willUpdate，willReceiveProps生命周期中进行如下操作，由于这些生命周期都在Render阶段，可随时被打断。配合Fiber的异步渲染可能会导致无法预料的结果展示。
+ - setState
+ - fetch
+ - 操作真实DOM
+  ......
 
 > https://zh-hans.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
