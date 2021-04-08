@@ -12,7 +12,8 @@ toc: true
 
 <!--more-->
 # What？
-> JSX是JavaScript的一个语言扩展，实质是快速构建页面结构的语法糖
+> JSX是JavaScript的一个语法扩展，实质是快速构建页面结构的语法糖
+ReactDOM在渲染所有输入内容之前，默认会进行转义，可以有效地防止XSS攻击
 ```
 React.creatElement(type, config, children)  // 格式化数据，调用ReactElement创建虚拟DOM
 

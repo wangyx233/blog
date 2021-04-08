@@ -78,6 +78,9 @@ var FLUSH_BATCHED_UPDATES = {
 var TRANSACTION_WRAPPERS = [FLUSH_BATCHED_UPDATES, RESET_BATCHED_UPDATES];
 
 ```
+> 说明：一个事务是将要执行的method使用wrapper封装起来，再通过Transaction提供的perform方法执行。在执行perform之前，先执行所有wrapper的initialize，perform（即method执行后）再执行所有的close方法。
+总结：
+> isBatchingUpdates，这个变量在React的生命周期钩子函数及合成事件执行前，已经被改为true，所以这时调用setState不会立即生效。当函数执行完毕后，事务的close方法会再把isBatchingUpdates改为false
 
 为什么要异步？
 - 避免重复的re-render
