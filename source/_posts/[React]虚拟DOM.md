@@ -1,8 +1,3 @@
-<!--
- * @Since: 2021-03-31 11:40:32
- * @LastAuthor: Yixuan
- * @LastTime: 2021-04-02 11:30:00
--->
 ---
 title: 【React】Virtual DOM
 categories: ["React"]
