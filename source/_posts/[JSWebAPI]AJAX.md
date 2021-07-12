@@ -27,6 +27,7 @@ xhr.send(null)
 // post
 xhr.send(JSON.stringify({}))
 ```
+可以改成promise的情况
 - xhr.readyState
  * 0 (未初始化)没有调用send()方法
  * 1 (载入)已调用send()，正在发送请求
@@ -54,5 +55,10 @@ xhr.send(JSON.stringify({}))
 所有的跨域，都必须经过server端的允许和配合
 
  ### JSONP 
+ - script可以实现跨域
+ - server端可以动态拼接数据返回
 
-
+ ### CORS - 服务器端设置 http header
+  - Access-Control-Allow-Origin
+  - Access-Control-Allow-Headers
+  - Access-Control-Allow-Methods

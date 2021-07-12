@@ -1,0 +1,76 @@
+
+- 变量提升
+- 块级作用域，全局作用域，函数作用域
+- 函数表达式 vs 函数声明
+- typeof 操作符
+- 强制类型转换，隐式类型转换
+- 手写深度比较，loash的isEqual
+- 数组API，功能是什么，返回值，是否对原数组造成影响。纯函数，不对原数组有副作用，并且返回一个数组
+比如：concat,map,filter,slice
+- splice 不是一个纯函数,splice的返回值是修改的值
+- [10, 20, 30].map(parseInt)
+- get post 区别
+- call apply
+- 事件代理(委托)
+- 闭包，有什么问题。导致内存得不到释放，被占用。自由变量和作用域，看函数定义时的位置。而不是执行时
+- 如何阻止冒泡，默认行为
+- 查找、添加、删除、移动DOM
+- 如何减少DOM操作
+- jsonp原理，为什么不是真正的ajax
+- document load ready区别
+- 函数声明 函数表达式
+- new Object() => {} Object.prototype  和 Object.create(null),创建的对象没有原型，可指定原型Object.create({})，区别
+Object.create({})
+1. 创建一个空对象
+2. 然后这个对象的__proto__ 指向{}
+- this的场景
+- 作用域和自由变量
+- 正则
+- 手写trim
+- 如何获取多个数字中的最大值
+- 实现继承
+- 捕获异常
+window.onerror = function() {}
+try{} catch() {} finally {}
+- json
+- url参数,location.search URLSearchParams
+- flat 去重
+- 深拷贝
+- 性能优化
+- RAF requestAnimationFrame
+
+面试相关
+一定要自信，有理有据
+积极 乐观 踏实
+
+
+
+e.g
+for(var i = 0; i < 10; i++){
+    var j = i + 1;
+}
+console.log(i, j)
+
+看定义的位置的值呀！！！
+let i
+for(i = 1; i <= 3; i++ ) {
+    setTimeout(() => {
+        console.log(i)
+    }, 0)
+}
+区别
+for(let i = 1; i <= 3; i++ ) {
+    setTimeout(() => {
+        console.log(i)
+    }, 0)
+}
+
+let a = 100;
+function test() {
+    console.log(a);
+    a = 10;
+    console.log(a);
+}
+
+test();
+console.log(a);

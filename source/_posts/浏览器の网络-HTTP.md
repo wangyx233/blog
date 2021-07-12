@@ -10,6 +10,9 @@ HTTP是应用层协议
 {% img /gallery/http.png %}
 <!--more-->
 
+ABNF语法规则
+Chrome小绩效，network里面，按住shift可以看到鼠标悬停请求的上下游，绿色是其上游，红色是其下游
+
 ### HTTP/1
 - HTTP/0.9 -> 1991出现的，依靠TCP(传输层协议)，三次握手建立连接，四次挥手断开连接。只有一个请求行类似GET /index.html，没有请求头和请求体，服务端也没有返回头信息，用ASCII字节码来传递HTML消息
 
