@@ -31,7 +31,7 @@ XSS是指攻击者向HTML，DOM中注入恶意脚本，从而在用户浏览页�
 ### 怎么办
 
 - 服务器对输入数据进行转码
-- 充分利用CSP(Content-Security-Policy)，限制其他源的资源下载，禁止像第三方域提交数据，禁止执行内联脚本和未授权的脚本，即使上报
+- 充分利用CSP(Content-Security-Policy)，限制其他源的资源下载，禁止向第三方域提交数据，禁止执行内联脚本和未授权的脚本，即使上报
 - 使用 HttpOnly 属性，HTTP的响应头，set-cookied: xxxx ; HttpOnly。只能通过HTTP请求使用，无法通过document.cookie获取
 还可以通过添加验证码的方式防止脚本冒充用户进行提交危险操作，对于一些不信任的输入，还可以限制其输入长度
 
@@ -46,9 +46,8 @@ CSRF(Cross-site request forgery)，跨站请求伪造。攻击者引诱用户打
 ```
 - 自动发起POST请求，一个隐藏的表单
 - 引诱用户点击链接
-- CSRF Token
 
 ### 怎么办
 - 对于响应头的Cookie设置，SameSite可以设置Strict、Lax 和 None
 - 验证请求的来源站点，通过Origin，Referer判断
-- post请求，增加验证
+- 设置CSRF Token，每次请求都携带该token进行验证
