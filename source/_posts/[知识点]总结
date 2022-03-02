@@ -39,11 +39,8 @@ try{} catch() {} finally {}
 - 性能优化
 - RAF requestAnimationFrame
 
-面试相关
 一定要自信，有理有据
 积极 乐观 踏实
-
-
 
 e.g
 for(var i = 0; i < 10; i++){
