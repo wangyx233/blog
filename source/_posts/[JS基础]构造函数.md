@@ -63,15 +63,6 @@ var myNew = (constructor, ...args) => {
 }
 ```
 
-```
-var myNew = (constructor, ...args) => {
-  const obj = {}
-  obj.__proto__ = constructor.prototype //  Object.setPrototypeOf(obj, constructor.prototype)
-  const result = constructor.apply(obj, args)
-  return (typeof result === 'object' && result !== null) ? result : obj
-}
-```
-
 > Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的`__proto__`
 
 ```

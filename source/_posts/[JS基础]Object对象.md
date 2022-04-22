@@ -186,7 +186,7 @@ function copyOwnPropertiesFrom(target, source) {
 
 ### prototype 对象
 
-> 拥有 constructor，指向改原型对象的构造函数
+> 拥有 constructor，指向该原型对象的构造函数
 > constructor 属性表示原型对象与构造函数之间的关联关系，如果修改了原型对象，一般会同时修改 constructor 属性，防止引用的时候出错。
 
 - instanceof
